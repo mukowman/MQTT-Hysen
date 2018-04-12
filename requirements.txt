@@ -1,0 +1,3 @@
+pycryptodome==3.4.11
+git+https://github.com/mjg59/python-broadlink.git
+paho-mqtt
