@@ -11,8 +11,8 @@ Using MQTT you can control the Hysen Broadlink Themostat using the following top
 
 	broadlink/MAC/command
   
-Publish a json array with two elements (command and value) to
-`broadlink/MAC/command`, e.g. `{"command":"set_power","value":1}`.
+Publish a json array with the command and value
+`broadlink/MAC/command`, e.g. `{"set_power":1}`.
 
 The following commands are currently working;
 
