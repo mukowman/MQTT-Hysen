@@ -11,7 +11,7 @@ ADD . /app
 
 # Install any needed packages specified in requirements.txt
 RUN pip install -r requirements.txt
-
+RUN chmod +x ./app.sh
 # Define environment variables
 ENV MQTT_SERVER "iot.eclipse.org"
 ENV MQTT_USERNAME ""
