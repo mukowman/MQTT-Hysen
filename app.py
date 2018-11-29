@@ -56,6 +56,7 @@ def send_command(mac, parsed_json):
 		return
 
 	#dev = next(bl for bl in devs if mac in (None, '') or bl.mac == mac)
+        # i try tp change this for mac 34:ea:34:70
 	dev = devs[0]
 	for bl in devs:
 		#hex_data = binascii.hexlify(bl.mac)
@@ -64,8 +65,8 @@ def send_command(mac, parsed_json):
 			print('Broadlink with mac ', strmac, ' found ', bl.host)
 			dev = bl
 		else:
-			print('Broadlink with mac ', mac, 'not found')
-			return
+			print('Broadlink with mac ', strmac, ' found ', bl.host)
+			dev = bl
 			
 	dev.auth()
 
