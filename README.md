@@ -1,5 +1,5 @@
-# MQTT-Hysen
-A Hysen Broadlink Themostat docker controlled using MQTT
+# MQTT-Hysen, beok, Floureon, Decdeal
+A Broadlink Themostat docker controlled using MQTT
 
 Credit to [madmod/dashcast-docker](https://github.com/madmod/dashcast-docker), used as a base for this docker.
 
