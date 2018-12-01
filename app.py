@@ -56,16 +56,16 @@ def send_command(mac, parsed_json):
 		return
 
 	#dev = next(bl for bl in devs if mac in (None, '') or bl.mac == mac)
-        # i try tp change this for mac 34:ea:34:70
+        ## OlegJktu change original code. Delet MAC control. Because Beok have mac 34:ea:34:70
 	dev = devs[0]
 	for bl in devs:
 		#hex_data = binascii.hexlify(bl.mac)
 		strmac = ':'.join(format(s, '02x') for s in bl.mac[::-1])
 		if strmac == mac.lower():
-			print('Broadlink with mac ', strmac, ' found ', bl.host)
+			print('Broadlink with mac 02x', strmac, ' found ', bl.host)
 			dev = bl
 		else:
-			print('Broadlink with mac ', strmac, ' found ', bl.host)
+			print('Device with mac ', strmac, ' found ', bl.host)
 			dev = bl
 			
 	dev.auth()
