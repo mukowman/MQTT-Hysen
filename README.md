@@ -1,13 +1,17 @@
-# MQTT-Hysen
-A Hysen Broadlink Themostat docker controlled using MQTT
+# MQTT-Hysen, Beok, Floureon, Decdeal
+A Broadlink Thermostat docker controlled using MQTT
 
 Credit to [madmod/dashcast-docker](https://github.com/madmod/dashcast-docker), used as a base for this docker.
 
-This docker is a gateway to control the Hysen Broadlink Themostat using MQTT and will publish status messages
+This docker is a gateway to control the Broadlink Themostat using MQTT and will publish status messages
+
+## Device compatibility
+This must work whith wifi thermostats of different chines brand like Hysen, Beok, Floureon, Decdeal. If you can see thermostat in app broadlink (but can not control it) it look like it would be compability. If you can control thermostat from Beok Home or Room heat app (android) the thermostat is compability.
+Beok models Beok BOT-313WiFi-WH and Beok TDS22 WP WiFi are compability.
 
 ## Discovery and control
 
-Using MQTT you can control the Hysen Broadlink Themostat using the following topic. `MAC` is the mac address of the device in the format 00:11:22:aa:bb:cc.
+Using MQTT you can control the Broadlink Themostat using the following topic. `MAC` is the mac address of the device in the format 00:11:22:aa:bb:cc.
 
 	broadlink/MAC/command
   
@@ -29,4 +33,5 @@ The following commands are currently working;
 $ docker run --name MQTT-Hysen --restart unless-stopped --net=host -e MQTT_SERVER="192.168.0.10" -e MQTT_USERNAME="user" -e MQTT_PASSWORD="password" -d mukowman/MQTT-Hysen
 ```
 This will start a python based MQTT client listening on topic broadlink/+/command.
-Any messages received will be sent to an active Hysen Broadlink Thermostat
+Any messages received will be sent to an active Broadlink Thermostat
+Folder /app in Docker have files and script inside it.
